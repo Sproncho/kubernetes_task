@@ -1,3 +1,4 @@
+
 output "ec2_public_ip" {
   description = "Public IP of EC2 instance"
   value       = module.ec2.public_ip
@@ -16,4 +17,5 @@ output "s3_bucket_name" {
 output "elastic_ip_dns" {
   description = "Elastic IP DNS (if applicable)"
   value       = module.ec2.elastic_ip
+
 }

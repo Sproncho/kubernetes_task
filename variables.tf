@@ -1,3 +1,4 @@
+
 variable "aws_region" {
   description = "AWS region to deploy resources"
   type        = string
@@ -20,4 +21,5 @@ variable "ssh_allowed_cidrs" {
   description = "CIDRs that are allowed to SSH"
   type        = list(string)
   default     = ["0.0.0.0/0"]
+
 }
