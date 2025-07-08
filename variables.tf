@@ -1,13 +1,25 @@
-variable "ssh_allowed_ips" {
-  description = "List of allowed SSH IPs per workspace"
-  type = map(string)
-  default = {
-    dev  = "192.168.1.10/32"
-    prod = "203.0.113.5/32"
-  }
+
+variable "aws_region" {
+  description = "AWS region to deploy resources"
+  type        = string
+  default     = "us-east-1"
 }
 
-variable "vpc_id" {
-  description = "VPC ID where to deploy the security group"
+variable "instance_type" {
+  description = "Type of EC2 instance"
   type        = string
+  default     = "t3.micro"
+}
+
+variable "project_name" {
+  description = "Project name used in tags and naming"
+  type        = string
+  default     = "cloudify"
+}
+
+variable "ssh_allowed_cidrs" {
+  description = "CIDRs that are allowed to SSH"
+  type        = list(string)
+  default     = ["0.0.0.0/0"]
+
 }
